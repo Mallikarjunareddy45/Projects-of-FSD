@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>login page</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f0f2f5;
+}
+
+.login-box{
+    width:300px;
+    margin:120px auto;
+    padding:25px;
+    background:white;
+    border-radius:8px;
+    box-shadow:0 0 10px gray;
+    text-align:center;
+}
+
+h2{
+    margin-bottom:20px;
+}
+
+input{
+    width:90%;
+    padding:10px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+button{
+    width:95%;
+    padding:10px;
+    background:#4CAF50;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#45a049;
+}
+
+a{
+    display:block;
+    margin-top:10px;
+    text-decoration:none;
+    color:#007BFF;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+#message{
+    margin-top:10px;
+    color:red;
+    font-size:14px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="login-box">
+<h2>Instagram</h2>
+
+<form>
+<input type="text" placeholder="Username or phone" required>
+<input type="password" placeholder="Password" required>
+
+<button type="submit">Login</button>
+</form>
+
+<a href="#" onclick="forgotPassword()">Forgot Password?</a>
+
+<p id="message"></p>
+
+</div>
+
+<script>
+function forgotPassword(){
+    document.getElementById("message").innerHTML =
+    "Password reset link would be sent to your registered email.";
+}
+</script>
+
+</body>
+</html>

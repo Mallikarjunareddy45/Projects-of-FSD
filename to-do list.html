@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>To-Do List</title>
+<style>
+body{
+    font-family: Arial;
+    background:#f2f2f2;
+    text-align:center;
+}
+.container{
+    width:300px;
+    margin:100px auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+input{
+    width:70%;
+    padding:8px;
+}
+button{
+    padding:8px 12px;
+    background:green;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+ul{
+    list-style:none;
+    padding:0;
+}
+li{
+    padding:8px;
+    margin-top:5px;
+    background:#eee;
+    display:flex;
+    justify-content:space-between;
+}
+.completed{
+    text-decoration: line-through;
+    color:gray;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>My To-Do List</h2>
+<input type="text" id="taskInput" placeholder="Enter task">
+<button onclick="addTask()">Add</button>
+<ul id="taskList"></ul>
+</div>
+<script>
+function addTask(){
+    let input=document.getElementById("taskInput");
+    let task=input.value;
+    if(task==="") return;
+    let li=document.createElement("li");
+    li.textContent=task;
+    li.onclick=function(){
+        li.classList.toggle("completed");
+    };
+    let del=document.createElement("button");
+    del.textContent="X";
+    del.style.background="red";
+    del.onclick=function(){
+        li.remove();
+    };
+    li.appendChild(del);
+    document.getElementById("taskList").appendChild(li);
+    input.value="";
+}
+</script>
+</body>
+</html>
